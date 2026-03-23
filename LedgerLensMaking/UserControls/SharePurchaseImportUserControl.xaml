@@ -1,0 +1,408 @@
+﻿<UserControl x:Class="LedgerLensMaking.UserControls.SharePurchaseImportUserControl"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+         mc:Ignorable="d"
+         
+        d:DesignHeight="700"
+         d:DesignWidth="900">
+    <UserControl.Resources>
+        <!-- Define styles within UserControl.Resources -->
+        <Style x:Key="SmallButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#821131"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Crimson"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!-- Change appearance when the button is disabled -->
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#A0A0A0"/>
+                    <Setter Property="Foreground" Value="FloralWhite"/>
+                    <Setter Property="BorderBrush" Value="AliceBlue"/>
+                </Trigger>
+                <!-- Change appearance on mouse hover -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F2205B"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="CreditButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="Teal"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="OliveDrab"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!-- Change appearance when the button is disabled -->
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#A0A0A0"/>
+                    <Setter Property="Foreground" Value="FloralWhite"/>
+                    <Setter Property="BorderBrush" Value="AliceBlue"/>
+                </Trigger>
+                <!-- Change appearance on mouse hover -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#B0F780"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="DebitButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#821131"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Crimson"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!-- Change appearance when the button is disabled -->
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#A0A0A0"/>
+                    <Setter Property="Foreground" Value="FloralWhite"/>
+                    <Setter Property="BorderBrush" Value="AliceBlue"/>
+                </Trigger>
+                <!-- Change appearance on mouse hover -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#F2205B"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="CustomButtonStyle2" TargetType="Button">
+            <Setter Property="Width" Value="30"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#38D200"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Crimson"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!-- Change appearance when the button is disabled -->
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#A0A0A0"/>
+                    <Setter Property="Foreground" Value="FloralWhite"/>
+                    <Setter Property="BorderBrush" Value="AliceBlue"/>
+                </Trigger>
+                <!-- Change appearance on mouse hover -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#B0F780"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="CustomButtonStyle" TargetType="Button">
+            <Setter Property="Width" Value="80"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Background" Value="#38D200"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="YellowGreen"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <!-- Change appearance when the button is disabled -->
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#A0A0A0"/>
+                    <Setter Property="Foreground" Value="FloralWhite"/>
+                    <Setter Property="BorderBrush" Value="AliceBlue"/>
+                </Trigger>
+                <!-- Change appearance on mouse hover -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#B0F780"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="CustomTextBoxStyle" TargetType="TextBox">
+            <Setter Property="BorderBrush" Value="#2787ED"/>
+            <!-- Original Value #2787ED -->
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost" Margin="1" Background="Transparent" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SimpleComboBoxStyle" TargetType="ComboBox">
+            <Setter Property="Background" Value="#FFFFFF"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="BorderBrush" Value="#2787ED"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- Row 0 for Title 1 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 1 for Title 2 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 2 for Title 3 -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 3 for Labels -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 4 for Text Boxes -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 5 for Two Import Buttons -->
+            <RowDefinition Height="Auto"/>
+            <!-- Row 6 for Two Import Grid -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="650"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <TextBlock Text="{Binding IndividualName}" Grid.Row="0" Grid.ColumnSpan="5" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" Foreground="AliceBlue" />
+            <TextBlock Text="{Binding PeriodLine}" Grid.Row="0" Grid.ColumnSpan="5" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Foreground="AliceBlue" />
+            <TextBlock Text="{Binding PrintDate}" Grid.Row="0" Grid.ColumnSpan="5" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Foreground="AliceBlue" />
+
+        </StackPanel>
+        <Grid Grid.Row="1" Grid.ColumnSpan="5" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <!-- Row 0 for Prompts -->
+                <RowDefinition Height="Auto"/>
+                <!-- Row 0 for Text Boxes -->
+                <RowDefinition Height="Auto"/>
+                <!-- Row 0 for Buttons -->
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Date" Grid.Row="0"  Grid.Column="0"  VerticalAlignment="Center" Foreground="AliceBlue" FontSize="18" Margin="10,10"/>
+            <TextBlock Text="Reference" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Foreground="AliceBlue" FontSize="18" Margin="10,10"/>
+            <TextBlock Text="Narration" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" Foreground="AliceBlue" FontSize="18" Margin="10,10"/>
+            
+            <TextBox Grid.Row="1" Grid.Column="0" Width="200" Height="40" Margin="10,0" FontSize="20" VerticalAlignment="Center" 
+                 Text="{Binding DateInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 />
+            <TextBox Grid.Row="1" Grid.Column="1" Width="200" Height="40" Margin="10,0" FontSize="20" VerticalAlignment="Center" 
+                 HorizontalAlignment="Left"
+                 Text="{Binding RefInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 />
+            <TextBox Grid.Row="1" Grid.Column="2" Width="200" Height="40" Margin="10,0" FontSize="20" VerticalAlignment="Center" 
+                 HorizontalAlignment="Left"
+                 Text="{Binding NarrationInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                 />
+
+            
+                <Button Command="{Binding ImportCommand}" Grid.Row="3"  Grid.Column="1" Margin="10,5" HorizontalAlignment="Left" Content="Select Excel" Style="{StaticResource CustomButtonStyle}" Width="180"  />
+                <Button Command="{Binding FinalImportCommand}" Grid.Row="3" Grid.Column="2" Margin="10,5" HorizontalAlignment="Left" Content="Import" Style="{StaticResource CreditButtonStyle}" Width="180" IsEnabled="{Binding IsFinalImportEnabled}" />
+            
+
+        </Grid>
+
+
+        <DataGrid Grid.Row="5"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="3"
+                  Width="850"
+                  ItemsSource="{Binding ExcelRows}"
+                    SelectedItem="{Binding SelectedExcelEntry, Mode=TwoWay}"
+                  AutoGenerateColumns="False"
+                  IsEnabled="{Binding IsGridEnabled}"
+                  SelectionMode="Single"
+                  FontSize="16"
+                  FontFamily="Consolas"
+                  Margin="0,10"
+                  Background="Transparent"
+                  Foreground="Black"
+                  BorderThickness="0"
+                  HorizontalGridLinesBrush="White"
+                  VerticalGridLinesBrush="White"
+                  RowBackground="#B4C6E7"
+                  CanUserAddRows="False"
+                  AlternatingRowBackground="#D9E2F3"
+                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                  >
+
+            <DataGrid.Resources>
+                <!-- Center-align text for non-numeric columns -->
+                <Style TargetType="DataGridCell">
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontFamily" Value="Consolas"/>
+                </Style>
+
+                <!-- Right-align text for numeric columns -->
+                <Style x:Key="NumericCellStyle" TargetType="DataGridCell">
+                    <Setter Property="HorizontalContentAlignment" Value="Right"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.Resources>
+
+            <!-- DataGrid Columns -->
+            <DataGrid.Columns>
+                <!-- Credit -->
+                <DataGridTextColumn Header="GL Credit" Binding="{Binding GLAccountForCredit}" Width="80">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <!--Debit-->
+                <DataGridTextColumn Header="GL Debit" Binding="{Binding GLSharesAccountForDebit}" Width="80">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <!--Company-->
+                <DataGridTextColumn Header="Company" Binding="{Binding Company}" Width="80">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Left"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!-- Transaction Date Column -->
+                <DataGridTextColumn Header="Date" Binding="{Binding TradeDate, StringFormat={}{0:dd-MMM-yyyy}}" Width="120">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+
+                <!-- Qty Column -->
+                <DataGridTextColumn Header="Qty" Binding="{Binding Qty, StringFormat={}{0:N2}}" Width="75">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <!-- Qty Sold Column -->
+                <DataGridTextColumn Header="Rate" Binding="{Binding Rate, StringFormat={}{0:N2}}" Width="75">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <!-- Amount -->
+                <DataGridTextColumn Header="Amount" Binding="{Binding Amt, StringFormat={}{0:N2}}" Width="75">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Right"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Error" Binding="{Binding ErrorMessage}" Width="150">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Foreground" Value="Red"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn Header="Actions" Width="100">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="D" Command="{Binding DataContext.DeleteRowCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                                    Style="{StaticResource SmallButtonStyle}"
+                                    CommandParameter="{Binding}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</UserControl>

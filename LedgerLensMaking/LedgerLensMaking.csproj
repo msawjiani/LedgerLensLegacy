@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BEB8F76-9D5B-489A-8E6E-9ADC1C9773A0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LedgerLensMaking</RootNamespace>
+    <AssemblyName>LedgerLensMaking</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.102.3.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.102.3\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=8.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.8.0.1\lib\net462\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Models\Data\ExcelShareImport.cs" />
+    <Compile Include="Models\Data\QryCapgainProfit.cs" />
+    <Compile Include="Models\Data\QryChartWithBalance.cs" />
+    <Compile Include="Models\Data\QryGeneralLedger.cs" />
+    <Compile Include="Models\Data\QryShareBalanceNett.cs" />
+    <Compile Include="Models\Data\QrySubledgerChart.cs" />
+    <Compile Include="Models\Data\QrySubledgerFDBalance.cs" />
+    <Compile Include="Models\UIModels\BankEntryGridModel.cs" />
+    <Compile Include="Models\UIModels\JournalModel.cs" />
+    <Compile Include="Models\UIModels\PaymentsSelectedShareDetails.cs" />
+    <Compile Include="Models\UIModels\ReportLegerModel.cs" />
+    <Compile Include="Models\UIModels\ReportTrialBalanceModel.cs" />
+    <Compile Include="Models\UIModels\SelectedShareDetails.cs" />
+    <Compile Include="Models\UIModels\ShareBalanceTotal.cs" />
+    <Compile Include="Models\ViewModels\BankPaymentsSharesViewModel.cs" />
+    <Compile Include="Models\ViewModels\BankPaymentsSubledgerViewModel.cs" />
+    <Compile Include="Models\ViewModels\BankPaymentViewModel.cs" />
+    <Compile Include="Models\ViewModels\BankReceiptsSharesViewModel.cs" />
+    <Compile Include="Models\ViewModels\BankReceiptSubledgerViewModel.cs" />
+    <Compile Include="Models\ViewModels\BankReceiptViewModel.cs" />
+    <Compile Include="Models\ViewModels\CloseBooksViewModel.cs" />
+    <Compile Include="Models\ViewModels\JournalEntryViewModel.cs" />
+    <Compile Include="Models\ViewModels\LedgerAccountViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportCapitalGainStatementViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportGeneralLedgerViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportLedgerViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportShareBalanceViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportSharesAtCostViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportsTrialBalanceViewModel.cs" />
+    <Compile Include="Models\ViewModels\ReportSubledgerTrialBalanceViewModel.cs" />
+    <Compile Include="Models\ViewModels\SalesShareJournalViewModel.cs" />
+    <Compile Include="Models\ViewModels\ShareJournalViewModel.cs" />
+    <Compile Include="Models\ViewModels\SharesChartViewModel.cs" />
+    <Compile Include="Models\ViewModels\SubLedgerChartViewModel.cs" />
+    <Compile Include="Models\ViewModels\SubledgerJournalViewModel.cs" />
+    <Compile Include="Models\ViewModels\TurboSharePurchaseViewModel.cs" />
+    <Compile Include="UserControls\BankPaymentsSharesUserControl.xaml.cs">
+      <DependentUpon>BankPaymentsSharesUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BankPaymentsSubledgerUserControl.xaml.cs">
+      <DependentUpon>BankPaymentsSubledgerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BankPaymentsUserControl.xaml.cs">
+      <DependentUpon>BankPaymentsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BankReceiptsSharesUserControl.xaml.cs">
+      <DependentUpon>BankReceiptsSharesUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BankReceiptsSubledgerUserControl.xaml.cs">
+      <DependentUpon>BankReceiptsSubledgerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\BankReceiptsUserControl.xaml.cs">
+      <DependentUpon>BankReceiptsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CloseBooksUserControl.xaml.cs">
+      <DependentUpon>CloseBooksUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\JournalEntryUserControl.xaml.cs">
+      <DependentUpon>JournalEntryUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LedgerAccountUserControl.xaml.cs">
+      <DependentUpon>LedgerAccountUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportCapitalGainStatementUserControl.xaml.cs">
+      <DependentUpon>ReportCapitalGainStatementUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportFinalAccountsUserControl.xaml.cs">
+      <DependentUpon>ReportFinalAccountsUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportGeneralLedgerUserControl.xaml.cs">
+      <DependentUpon>ReportGeneralLedgerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportLedgerUserControl.xaml.cs">
+      <DependentUpon>ReportLedgerUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportShareBalanceUserControl.xaml.cs">
+      <DependentUpon>ReportShareBalanceUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportSharesAtCostUserControl.xaml.cs">
+      <DependentUpon>ReportSharesAtCostUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportsTrialBalanceUserControl.xaml.cs">
+      <DependentUpon>ReportsTrialBalanceUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportSubledgersUserControl.xaml.cs">
+      <DependentUpon>ReportSubledgersUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ReportSubledgerTrialBalanceUserControl.xaml.cs">
+      <DependentUpon>ReportSubledgerTrialBalanceUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SalesShareJournalUserControl.xaml.cs">
+      <DependentUpon>SalesShareJournalUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SelectYearView.xaml.cs">
+      <DependentUpon>SelectYearView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ShareJournalUserControl.xaml.cs">
+      <DependentUpon>ShareJournalUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SharePurchaseImportUserControl.xaml.cs">
+      <DependentUpon>SharePurchaseImportUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SharesChartUserControl.xaml.cs">
+      <DependentUpon>SharesChartUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubLedgerChartUserControl.xaml.cs">
+      <DependentUpon>SubLedgerChartUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SubledgerJournalUserControl.xaml.cs">
+      <DependentUpon>SubledgerJournalUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TurboSharePurchaseUserControl.xaml.cs">
+      <DependentUpon>TurboSharePurchaseUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UtilityClasses\AccountingYearRepository.cs" />
+    <Compile Include="UtilityClasses\BankEntryHelper.cs" />
+    <Compile Include="UtilityClasses\BaseReposityory.cs" />
+    <Compile Include="UtilityClasses\DatabaseHelper.cs" />
+    <Compile Include="UtilityClasses\HistoricalDataRepository.cs" />
+    <Compile Include="UtilityClasses\IndividualDetails.cs" />
+    <Compile Include="UtilityClasses\MainEntry.cs" />
+    <Compile Include="UtilityClasses\MainEntryFDReceipt.cs" />
+    <Compile Include="UtilityClasses\MainEntryShareReceipt.cs" />
+    <Compile Include="UtilityClasses\RelayCommand.cs" />
+    <Compile Include="UtilityClasses\ReportCapitalGainExportToExcel.cs" />
+    <Compile Include="UtilityClasses\ReportFDsExportToExcel.cs" />
+    <Compile Include="UtilityClasses\ReportLedgerAccountExportToExcel.cs" />
+    <Compile Include="UtilityClasses\ReportShareBalanceExportToExcel.cs" />
+    <Compile Include="UtilityClasses\ReportShareBalanceTotalsExportToExcel.cs" />
+    <Compile Include="UtilityClasses\ReportSharesAtCostExportToExcel.cs" />
+    <Compile Include="UtilityClasses\ReportTrialBalanceExportToExcel.cs" />
+    <Compile Include="UtilityClasses\TransactionRepository.cs" />
+    <Compile Include="UtilityClasses\YearEndProcessing.cs" />
+    <Compile Include="Windows\BankPaymentSharesWindow.xaml.cs">
+      <DependentUpon>BankPaymentSharesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BankPaymentSubledgerWindow.xaml.cs">
+      <DependentUpon>BankPaymentSubledgerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BankReceiptsSharesWindow.xaml.cs">
+      <DependentUpon>BankReceiptsSharesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\BankReceiptSubledgerWindow.xaml.cs">
+      <DependentUpon>BankReceiptSubledgerWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GlobalVariable.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Resourses\Styles.xaml" />
+    <Page Include="UserControls\BankPaymentsSharesUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BankPaymentsSubledgerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BankPaymentsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BankReceiptsSharesUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BankReceiptsSubledgerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\BankReceiptsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\CloseBooksUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\JournalEntryUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\LedgerAccountUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportCapitalGainStatementUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportFinalAccountsUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportGeneralLedgerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportLedgerUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportShareBalanceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportSharesAtCostUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportsTrialBalanceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportSubledgersUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReportSubledgerTrialBalanceUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SalesShareJournalUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SelectYearView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ShareJournalUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SharePurchaseImportUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SharesChartUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SubLedgerChartUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\SubledgerJournalUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TurboSharePurchaseUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BankPaymentSharesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BankPaymentSubledgerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BankReceiptsSharesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\BankReceiptSubledgerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Data\AccountingYear.cs" />
+    <Compile Include="Models\Data\Chart.cs" />
+    <Compile Include="Models\Data\GeneralLedger.cs" />
+    <Compile Include="Models\Data\HistoricalData.cs" />
+    <Compile Include="Models\Data\Individual.cs" />
+    <Compile Include="Models\Data\MainEntryModel.cs" />
+    <Compile Include="Models\Data\QryShareBalance.cs" />
+    <Compile Include="Models\Data\QryTrailBalance.cs" />
+    <Compile Include="Models\Data\SharePurchases.cs" />
+    <Compile Include="Models\Data\SharesChart.cs" />
+    <Compile Include="Models\Data\SharesSales.cs" />
+    <Compile Include="Models\Data\SubledgerChart.cs" />
+    <Compile Include="Models\Data\SubledgerTrans.cs" />
+    <Compile Include="Models\ViewModels\BaseViewModel.cs" />
+    <Compile Include="Models\ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Models\ViewModels\SelectYearViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Alpa.png" />
+    <Resource Include="Assets\Ganesh.png" />
+    <Resource Include="Assets\logo1.png" />
+    <Resource Include="Assets\Logo2.png" />
+    <Resource Include="Assets\Manish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\HUF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\Siddharth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\9BFamily.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\FamilyPNG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\LLImage.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\LLImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LedgerLens32.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
