@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.10.35013.160
+# Visual Studio Version 18
+VisualStudioVersion = 18.5.11723.231 stable
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LedgerLensMaking", "LedgerLensMaking\LedgerLensMaking.csproj", "{4BEB8F76-9D5B-489A-8E6E-9ADC1C9773A0}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LedgerLens", "LedgerLens\LedgerLens.vdproj", "{3F6CC7A3-A280-439F-986C-A68BE3E2F42A}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "LedgerLensInstaller", "LedgerLensInstaller\LedgerLensInstaller.vdproj", "{DE881B02-D5C1-A3FF-ACD9-879D33C82308}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{4BEB8F76-9D5B-489A-8E6E-9ADC1C9773A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BEB8F76-9D5B-489A-8E6E-9ADC1C9773A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BEB8F76-9D5B-489A-8E6E-9ADC1C9773A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3F6CC7A3-A280-439F-986C-A68BE3E2F42A}.Debug|Any CPU.ActiveCfg = Debug
-		{3F6CC7A3-A280-439F-986C-A68BE3E2F42A}.Release|Any CPU.ActiveCfg = Release
+		{DE881B02-D5C1-A3FF-ACD9-879D33C82308}.Debug|Any CPU.ActiveCfg = Debug
+		{DE881B02-D5C1-A3FF-ACD9-879D33C82308}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
